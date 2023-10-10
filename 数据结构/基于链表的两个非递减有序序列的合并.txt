@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+typedef struct LNode
+{
+int data;
+struct LNode *next;
+}LNode,*LinkList;
+void CreateList_R(LinkList &L,int n)
+{//后插法创建单链表
+L=new LNode;
+L->next=NULL;
+LinkList r=L;
+for(int i=0;i<n;i++)
+{
+LinkList p=new LNode;
+cin>>p->data;
+p->next=NULL;
+r->next=p;
+r=p;
+}
+}
+void PrintList(LinkList &L)
+{//打印依次输出链表中的数据
+L=L->next;
+while(L){
+if(L->next!=NULL) cout<<L->data<<" ";
+else cout<<L->data;
+L=L->next;
+}
+cout<<endl;
+}
+void MergeList(LinkList &LA,LinkList &LB,LinkList &LC)
+{//求基于链表的两个非递减有序序列的合并
+LinkList pa = LA->next;
+LinkList pb = LB->next;
+LinkList pc = LC;
+while(pa && pb)
+{
+if(pa->data <= pb->data)
+{
+pc->next = pa;
+pc = pa;
+pa = pa->next;
+}
+
+
+else
+{
+pc->next = pb;
+pc = pb;
+pb=pb->next;
+}
+}
+pc->next = pa ? pa : pb;
+if (LC == nullptr || LC->next == nullptr) {
+        return;
+    }
+      
+    LinkList prev = nullptr;
+    LinkList curr = LC->next;
+    LinkList next = nullptr;
+      
+    while (curr != nullptr) {
+        next = curr->next;  // 保存下一个节点的位置
+        curr->next = prev;  // 当前节点的下一个节点指向前一个节点
+        prev = curr;  // 更新prev为当前节点
+        curr = next;  // 更新curr为下一个节点
+    }
+      
+    LC->next = prev;  }// 头指针指向逆序后的最后一个节点}
+int main()
+{
+int n,m;
+while(cin>>n>>m)
+{
+if(n==0&&m==0) break;
+LinkList LA,LB,LC;
+CreateList_R(LA,n);
+CreateList_R(LB,m);
+LC = new LNode;
+MergeList(LA,LB,LC);
+PrintList(LC);
+}
+return 0;
+}
