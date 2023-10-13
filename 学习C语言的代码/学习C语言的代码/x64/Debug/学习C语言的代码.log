@@ -1,2 +1,4 @@
 ﻿  test.c
-  学习C语言的代码.vcxproj -> D:\github\BMS_tidy_P-C\学习C语言的代码\x64\Debug\学习C语言的代码.exe
+D:\github\C_language\学习C语言的代码\学习C语言的代码\test.c(37,2): warning C4047: “!=”:“int”与“void *”的间接级别不同
+D:\github\C_language\学习C语言的代码\学习C语言的代码\test.c(52,15): warning C4013: “strlen”未定义；假设外部返回 int
+  学习C语言的代码.vcxproj -> D:\github\C_language\学习C语言的代码\x64\Debug\学习C语言的代码.exe
