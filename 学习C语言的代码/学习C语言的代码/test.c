@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include<string.h>
 
 //int Add(int x, int y) {
 //	return (x + y);
@@ -156,4 +157,77 @@
 //7. strncmp    字符串的比较，加了总共要比较多少个字节   ---常量字符串不能被改变
 //char*strcmp(char*dest,const char*src，size_t count)	
 //
+//strstr->字符串的查找
+//char*strstr(const char*str,const char*strChatset)
+// ----查找一个字符串  如果存在就返回 第一次出现相同  字符串首字符的地址。没找到就返回一个空指针
+//UNLL--空指针-》'\0'
+
+//char* my_strstr(const char* p1, const char* p2) {
+//	assert(p1 && p2);
+//	
+//	char* s1 = p1;
+//	char* s2 = p2;
+//	char* cur = p1;
+//	if (!*s2) {//如果s2等于‘、0’
+//		return p1;
+//	}
+//	while (*cur) {
+//		s1 = cur;
+//		s2 = p2;
+//		while (*s1&& *s2  && !(*s1 -*s2)) {
+//			s1++;
+//			s2++;
+//			
+//		}
+//		if (*s2 == '\0')
+//			return cur;
+//		cur++;
+//		if (*cur == '\0')
+//			return NULL ;//找不到字符串
+//	}
+//}
 //
+//
+//int main() {
+//	char p1[] = "adcb";
+//	char p2[] = "dc";
+//	char* ret = my_strstr(p1, p2);
+//	printf("%s\n", ret);
+//	return 0;
+//} 
+////8.strtok
+////char*strtok(char*str,const char*sep)---sep分隔符的字符集合。分隔符的字符串
+//
+//int main()
+//{
+//	char arr[] = "zoo@kdo.ada.da";
+//	char p[] = "@.";
+//	char buf[1024] = { 0 };
+//	//切割buf中的字符串
+//	strcpy(buf, arr);
+//	char* ret = NULL;
+//	for (ret=strtok(arr,p); ret!=NULL; ret=strtok(NULL,p))
+//	{//第二回输入时传UNLL；第一次后就记住第一次调用的arr字符串，但是第一次不能传NULL
+//		printf("%s ",ret);
+//	}
+//}
+
+
+//9.strerror----------返回错误码所对应的错误信息   errnum=错误码
+//char*strerror(int errnum);----必须包含#include<errno.h>
+
+//每一个错误码都是  都是一个错误信息。
+//真实写的时候里面放入 errno->
+//errno-是一个全局的错误码的变量
+//当c语言的库函数在指行的过程中，发生了错误，就会把对应的错误码，赋值到errno中去。
+
+
+
+//打开文件
+////FILE* p = fopen("test.txt", "r");//"r"读文件的意思
+
+  
+
+
+
+//10.
