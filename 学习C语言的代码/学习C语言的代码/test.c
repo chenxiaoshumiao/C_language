@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<assert.h>
 #include<string.h>
+#include "test.h"
 
 //int Add(int x, int y) {
 //	return (x + y);
@@ -334,25 +335,74 @@
 // 
 //    return 0;
 //}
-int main() {
-    //向内存申请10个整形空间
-    int* p = malloc(10 * sizeof(int));
-    //可能会失败
-    if (p == NULL) {
-        printf("%s\n", strerror(errno));
+//int main() {
+//    //向内存申请10个整形空间
+//    int* p = malloc(10 * sizeof(int));
+//    //可能会失败
+//    if (p == NULL) {
+//        printf("%s\n", strerror(errno));
+//
+//    }
+//    else {
+//        //开辟成功 正常使用
+//        int i = 0;
+//        for (i = 0; i < 10; i++) {
+//            *(p + i) = i;
+//        }
+//        for (i = 0; i < 10; i++) {
+//            printf("%d " ,* (p + i));
+//        }
+//    }
+//    free(p);//释放ptr所指向的动态内存
+//    p = NULL;//是否有必要？非常有必要！！！！！！！！后面free(NULL)是无效的  无害也无利。
+//    return 0;
+//}
 
-    }
-    else {
-        //开辟成功 正常使用
-        int i = 0;
-        for (i = 0; i < 10; i++) {
-            *(p + i) = i;
-        }
-        for (i = 0; i < 10; i++) {
-            printf("%d " ,* (p + i));
-        }
-    }
-    free(p);//释放ptr所指向的动态内存
-    p = NULL;//是否有必要？
-    return 0;
-}
+
+
+
+//第一种
+//void GetMemory(char** p)//接收的是一个指针的地址
+//{
+//    *p = (char*)malloc(100);//如果传参错误就会导致 内存泄露。
+//}//*p其实就是str
+//void Test(void)
+//{
+//    char* str = NULL;
+//    GetMemory(&str);//    要传地址 不能直传递。
+//    strcpy(str, "hello world");
+//    printf(str);
+//    free(str);
+//    str = NULL;
+//}
+//
+//int main() {
+//
+//    Test();
+//    return 0;
+//}
+//
+
+ 
+
+////调整为返回值的函数
+//char* GetMemory(char* p)//接收的是一个指针的地址
+//{
+//    p = (char*)malloc(100);
+//    return p;
+//}
+//void Test(void)
+//{
+//    char* str = NULL;
+//   str=GetMemory(str);//    要传地址 不能直传递。
+//    strcpy(str, "hello world");
+//    printf(str);
+//    free(str);
+//    str = NULL;
+//}
+//
+//int main() {
+//
+//    Test();
+//    return 0;
+//}
