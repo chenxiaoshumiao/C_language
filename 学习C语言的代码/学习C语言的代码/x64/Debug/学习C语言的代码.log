@@ -1,4 +1,2 @@
 ﻿  test.c
-D:\github\C_language\学习C语言的代码\学习C语言的代码\test.c(260,12): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-D:\github\C_language\学习C语言的代码\学习C语言的代码\test.c(260,12): message : 请考虑在格式字符串中使用“%zd”
   学习C语言的代码.vcxproj -> D:\github\C_language\学习C语言的代码\x64\Debug\学习C语言的代码.exe
