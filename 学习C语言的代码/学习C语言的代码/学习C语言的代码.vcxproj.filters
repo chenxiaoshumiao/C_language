@@ -20,8 +20,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <Text Include="test1.txt">
+      <Filter>源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>

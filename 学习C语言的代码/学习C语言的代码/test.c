@@ -2,8 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
-#include<string.h>
-#include "test.h"
+//#include<string.h>
 
 //int Add(int x, int y) {
 //	return (x + y);
@@ -406,3 +405,38 @@
 //    Test();
 //    return 0;
 //}
+
+//文件操作
+
+//int main(){
+//    int a = 100000;
+//    FILE* pf = fopen("test1.txt", "wb");
+//        fwrite(&a, 4, 1, pf);//二进制的形式写到文件中
+//        fclose(pf);
+//        pf = NULL;
+//    return 0;
+//}
+
+struct S
+{   
+    int a;
+    int c;
+    char arr[10];
+
+};
+
+int main() {
+    struct S* ps = (struct S*) malloc(sizeof(struct S)+5*sizeof(int));
+    struct S s = { 1000,20,"love" };
+    FILE* pf = fopen("test.txt", "r+");
+    if (pf == NULL) {
+        return 0;
+    }
+    fprintf(pf, "%d %d %s", s.a, s.c, s.arr);
+    fprintf(pf, "%d %d %s", s.a, s.c, s.arr);
+    free(ps);
+    ps = NULL;
+    fclose(pf);
+    pf = NULL;
+    return 0;
+}
